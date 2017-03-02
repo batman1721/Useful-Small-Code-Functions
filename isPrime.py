@@ -2,30 +2,26 @@
 import math
 
 def isPrime(n):
-    i=2
     if n==1:
-        i=0
+        return False
     elif n<4:
-        i=1
+        return True
     else:
         if n%2==0:
-            i=0
+            return False
         else:
             if n<9:
-                i=1
+                return True
             elif n%3==0:
-                i=0
+                return False
             else:
-                r=math.floor(sqrt(n))
+                r=math.floor(math.sqrt(n))
                 f=5
                 while f<=r:
                     if n%f==0:
-                        i=0
-                        break
+                        return False
                     elif n%(f+2)==0:
-                        i=0
-                        break
+                        return False
                     f=f+6
-    print i
-    
-isPrime(71)
+                return True
+
